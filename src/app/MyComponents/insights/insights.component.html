@@ -1,0 +1,25 @@
+<div class="head">
+    <div class="headerobjectswrapper">
+        <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: {{(weather.weather[0].description).toUpperCase()}}</span><br><span>Wind: {{weather.wind.speed}} km/h; Ther: {{weather.main.temp}}°C; Hum: {{weather.main.humidity}}%</span></div>
+        <header>DELHI TIMES</header>
+    </div>
+
+    <div class="subhead">New Delhi, IN - {{currenttime}}</div>
+</div>
+<div class="content">
+    <div class="collumns">
+      <div class="collumn"  *ngFor="let news of allnews.results">
+        <div class="head"><span class="headline hl5">{{news.title}}</span><p><span class="headline hl6">Source : {{(news.source_id).toUpperCase()}}</span></p></div>
+        {{news.description}}<br>
+  <figure class="figure">
+            <img class="media" src="{{news.image_url}}" alt="">
+            <figcaption class="figcaption">{{news.title}}</figcaption>
+        </figure>
+
+        <p>
+          {{news.full_description}}
+        </p>
+
+        </div>
+        </div>
+</div>

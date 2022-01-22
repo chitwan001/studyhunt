@@ -1,0 +1,20 @@
+<div class="mainfilterbody">
+  <div class="filters"></div>
+  <div class="filteredcontent">
+    <div class="allclasses">
+      <div class="indfilterclass" style="background: url('/assets/Images/{{class.img}}.jpeg'); background-position: center; background-repeat: no-repeat; background-size: cover;" *ngFor="let class of allclasses">
+        <!-- {{class}} -->
+        <div class="classheader">
+          <div class="classheadercontent" id="batch{{class._id}}">Class Name : {{class.name}}</div>
+        <div class="classheadercontent" id="subject{{class._id}}">Subject Name : {{class.subject}}</div>
+        <div class="classheadercontent" >Batch : {{class.batchname}}</div>
+        <div class="classheadercontent" id="teacher{{class._id}}">Taught By : {{class.master}}</div>
+        <div class="classheadercontent">Slots Available : {{class.availableslots}}</div>
+        </div>
+        <div class="sendinvite" (click)="sendinvite(class._id)">
+          Send Invite to Join
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,293 @@
+.maintutorclassesbody{
+  display: grid;
+  height: 100%;
+}
+.allclasses{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: fit-content;
+}
+.createnewclass:hover{
+  background-color: #dadada;
+}
+.titleofclass{
+  display: grid;
+    grid-template-rows: 2fr 1fr 1.5fr;
+    /* font-weight: 500; */
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 12.31vh;
+}
+.latestcontent{
+  height: 24.614vh;
+}
+.threedots{
+  width: 10%;
+    height: 15%;
+    top: 85%;
+    left: 90%;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+.threedots i{
+  cursor: pointer;
+}
+.titlecont{
+  display: grid;
+    align-content: center;
+    padding-left: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.deleteclass{
+  height: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+.deleteclass:hover{
+  background-color: rgb(201, 201, 201);
+}
+.threedotscomp{
+  display: none;
+    position: absolute;
+    border-radius: 2px;
+    width: 350%;
+    top: 80%;
+    height: 200%;
+    background-color: rgb(240, 240, 240);
+    right: 0;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.titlecont:hover{
+  text-decoration: underline;
+}
+.classclass{
+  display: grid;
+    align-content: center;
+    padding-left: 10px;
+    /* font-size: 1.5rem; */
+}
+.taughtby{
+  display: grid;
+    align-content: center;
+    padding-left: 10px;
+    font-size: 1.15rem;
+}
+.indclass{
+  display: grid;
+    position: relative;
+    grid-template-rows: 1fr 2fr;
+    /* background-color: #efefef; */
+    height: fit-content;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+.threedots{
+  position: absolute;
+}
+.profilepictutor{
+  position: absolute;
+    display: grid;
+    width: 5vw;
+    height: 5vw;
+    top: 19%;
+    left: 70%;
+    border-radius: 50px;
+    overflow: hidden;
+    /* border: 1px solid; */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.profilepictutor img{
+  width: 100%;
+  height: 105%;
+}
+.createnewclass{
+  height: 36.923vh ;
+  display: grid;
+    position: relative;
+    background-color: #e9e9e9;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px dashed grey;
+    cursor: pointer;
+    /* box-shadow: rgb(0 0 0 / 2 %) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px; */
+}
+.createnewdiv{
+  height: 50%;
+    place-self: center;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.addnew{
+  display: grid;
+  place-content: center;
+}
+.addnew i{
+  font-size: 4rem;
+}
+.addcontent{
+  font-size: 1.3rem;
+}
+.createclassmodal{
+  display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ededed9c;
+}
+.modalcontent{
+  display: grid;
+    width: 51%;
+    height: 37%;
+    grid-template-rows: 5fr 2fr;
+    place-self: center;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+
+.dbmodalcontent{
+  display: grid;
+  width: 50%;
+  height:20%;
+  place-self: center;
+  border-radius: 33px;
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.forminput{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.formlabel{
+  place-self: center;
+  height: 5vh;
+  margin: auto;
+}
+.forminput input{
+  height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    padding-left: 10px;
+    align-self: center;
+    margin-left: 2vw;
+    margin-bottom: 1vw;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+}
+.formcontrols{
+  display: grid;
+  width: 50%;
+  grid-template-columns: 1fr 2fr;
+  justify-self: end;
+}
+.createclass{
+  display: grid;
+  place-self: center;
+  width: 90%;
+  height: 60%;
+  background-color: rgb(101, 36, 161);
+  border-radius: 5px;
+  color: white;
+  place-content: center;
+  cursor: pointer;
+}
+.createclass:hover{
+  background-color: rgb(82, 30, 131);
+
+}
+.formcontent{
+  display: grid;
+  margin: auto;
+  padding-left: 1vw;
+  font-family: proxima-nova, monospace;
+  padding-top: 1vw;
+}
+.delete_button{
+  margin: auto;
+    border-radius: 30px;
+    width: 8vw;
+    height: 4vh;
+    background-color: #ff9b9b;
+    text-align: center;
+    padding-top: 7px;
+    -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.delete_button:hover{
+  box-shadow: inset 400px 0 0 0 #f52b2b;
+  color: white;
+  font-weight: 550;
+  cursor: pointer;
+}
+.cancel_button{
+  margin: auto;
+    border-radius: 30px;
+    width: 8vw;
+    height: 4vh;
+    background-color: #ff9b9b;
+    text-align: center;
+    padding-top: 7px;
+    -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.cancel_button:hover{
+  box-shadow: inset 400px 0 0 0 #81f98a;
+  color: black;
+  font-weight: 550;
+  cursor: pointer;
+}
+.joinaclass{
+  background: url('/assets/Images/wholebg.jpeg');
+  font-family: 'Mochiy Pop P One';
+    display: grid;
+    place-content: center;
+    font-size: 60px;
+    color: mediumorchid;
+}
+.addicon{
+  place-content: center;
+  place-self: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+.addicon i{
+  font-size : 2rem;
+}
+.addicon:hover i {
+  font-size: 2.5rem;
+}
+#courses{
+    width: 20vw;
+    margin-left: 2vw;
+    height: 2.5vh;
+}
+.cancel{
+  display: grid;
+  place-content: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  height: 6vh;
+  margin: auto;
+  width: 8vw;
+  border-radius: 10.5px;
+  cursor: pointer;;
+}
+.cancel:hover{
+  color: white;
+  background-color: red;
+}
+

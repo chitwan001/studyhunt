@@ -1,0 +1,21 @@
+<div class="maininvibody" *ngIf="allinvites.length != 0">
+    <div class="invitatons">
+      <div class="indinvi" *ngFor="let invi of allinvites">
+          <div class="invitationcontent">Batch Name : {{invi.batchname}}</div>
+          <div class="invitationcontent">Subject: {{invi.subject}}</div>
+          <div class="invitationcontent">By Tutor : {{invi.teacher}}</div>
+          <div class="InvitationControls">
+                <div class="timestampsinvi">
+                  <div class="sentat">{{invi.createdAt}}</div>
+                  <div class="updatedat">{{invi.updatedAt}}</div>
+                </div>
+                <div class="teacher-desired" *ngIf="invi.isaccepted == true">Invitation Accepted</div>
+                <div class="teacher-undesired" *ngIf="invi.isaccepted == false">Invitation Pending</div>
+          </div>
+      </div>
+    </div>
+    <div class="paginationcontrols"></div>
+  </div>
+  <div class="nopendinginvi" *ngIf="allinvites.length == 0">
+    No invitations found !
+  </div>

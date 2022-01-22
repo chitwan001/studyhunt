@@ -1,0 +1,97 @@
+<div class="maintutorclassesbody">
+  <div class="allclasses" *ngIf="allclasses.length!=0 || type == 'Tutor'">
+    <div class="indclass" id="{{indclass._id}}" *ngFor="let indclass of allclasses ; let i = index">
+      <div class="titleofclass" style="background: url('/assets/Images/{{indclass.img}}.jpeg'); background-position: center;">
+        <a class="titlecont" *ngIf="type == 'Tutor'" href="/h/t/{{indclass._id}}">{{indclass.name}}</a>
+        <a class="titlecont" *ngIf="type == 'Student'" href="/h/s/{{indclass._id}}">{{indclass.name}}</a>
+        <div class="classclass">{{indclass.batchname}}</div>
+        <div class="taughtby">{{indclass.master}}</div>
+      </div>
+      <div class="threedots">
+        <i class="material-icons" (click)="showthreedotscomp(i)">more_vert</i>
+        <div class="threedotscomp" id="threedotscomp{{i}}">
+          <div class="deleteclass" *ngIf="type == 'Tutor'" (click)="deletebatch(indclass._id)">Delete Batch</div>
+          <div class="deleteclass" *ngIf="type == 'Student'" (click)="unenrollbatch(indclass._id)">Unenroll</div>
+        </div>
+      </div>
+      <div class="profilepictutor">
+        <img src="/assets/Images/nulluser.jpeg" alt="">
+      </div>
+      <div class="latestcontent"></div>
+    </div>
+    <div *ngIf="type == 'Tutor'" class="createnewclass" (click)="addnewclass()">
+      <div class="createnewdiv">
+        <div class="addnew">
+          <i class="material-icons">
+            add
+          </i>
+        </div>
+        <div class="addcontent">Start a new batch</div>
+      </div>
+    </div>
+  </div>
+  <div class="joinaclass" *ngIf="allclasses.length==0 && type=='Student'">
+    Join a class<br>
+    <div class="addicon">
+      <i class="material-icons">
+        add
+      </i>
+    </div>
+  </div>
+</div>
+
+<div class="createclassmodal" id="createclassmodal">
+  <div class="modalcontent">
+    <div class="formcontent">
+      <div class="forminput">
+      <div class="formlabel"> Batch/Class Name: </div> <input type="text" name="" id="classnameinput">
+      </div>
+      <div class="forminput">
+        <div class="formlabel">Batch/Class : </div><input type="text" name="" id="batchinput">
+      </div>
+      <div class="forminput">
+       <div class="formlabel"> Subject : </div><input type="text" name="" id="subjectinput">
+      </div>
+      <div class="forminput">
+       <div class="formlabel"> Courses : </div>
+       <select name="" class="classes1" id="courses">
+         <option value="science">Science</option>
+         <option value="social science">Social Science</option>
+         <option value="arts">Arts</option>
+         <option value="economics">Economics</option>
+         <option value="mathematics">Mathematics</option>
+         <option value="computers">Computers</option>
+       </select>
+      </div>
+      <div class="forminput">
+       <div class="formlabel"> Maximum Students : </div><input type="number" name="" id="maxstudents">
+      </div>
+    </div>
+    <div class="formcontrols">
+      <div class="cancel" (click)="closemodal()">Cancel</div>
+      <div class="createclass" (click)="startaclass()">Start a class</div>
+    </div>
+  </div>
+</div>
+<div class="createclassmodal" id="deletebatchmodal">
+  <div class="dbmodalcontent">
+    <div class="formcontent">
+      You are going to delete a batch. It is not recoverable. Deleting a batch will unenroll all the students and delete all the batch content. If you know what you are doing is legit, click on Confirm Delete.
+    </div>
+    <div class="formcontrols">
+      <div class="cancel_button" (click)="closedbmodal()">Cancel</div>
+      <div class="delete_button" (click)="deletefinal()">Confirm Delete</div>
+    </div>
+  </div>
+</div>
+<div class="createclassmodal" id="unenrollmodal">
+  <div class="dbmodalcontent">
+    <div class="formcontent">
+      You are going to unenroll from a batch. It is not recoverable. Once Unenrolled you need to send request back to join this batch again. If you know what you are doing is legit, click on Confirm Unenroll.
+    </div>
+    <div class="formcontrols">
+      <div class="cancel_button" (click)="closeunmodal()">Cancel</div>
+      <div class="delete_button" (click)="unenrollthestu()">Confirm Unenroll</div>
+    </div>
+  </div>
+</div>

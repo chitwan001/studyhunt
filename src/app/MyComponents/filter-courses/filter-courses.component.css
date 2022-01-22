@@ -1,0 +1,50 @@
+.mainfilterbody{
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 10fr;
+  padding-left: 10px;
+}
+.classheader{
+  display: grid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.allclasses{
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: fit-content;
+}
+.filteredcontent{
+  display: grid;
+  /* height : 41.85vh */
+  height: 83.9vh;
+  overflow-y: scroll;
+}
+.classheadercontent{
+  display: grid;
+  align-self: center;
+  padding: 4px;
+}
+.sendinvite{
+  display: grid;
+    width: 60%;
+    place-self: center;
+    height: 70%;
+    background-color: #ffffff33;
+    place-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .sendinvite:hover{
+  background-color: #ffffffb7;
+  color: black;
+
+}
+.indfilterclass{
+  border-radius: 10px;
+  height: 22.52vh;
+  grid-template-rows: 5fr 1.5fr;
+  color: white;
+  display: grid;
+}

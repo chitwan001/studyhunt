@@ -1,0 +1,25 @@
+<div class="mainstudentsbody">
+  <div class="allstudents">
+    <div class="indstudent" *ngFor="let class of allclasses">
+      <div class="classname">
+        <div class="linehori"></div>
+        <div class="classnamecont">{{class.name}}</div>
+      </div>
+      <div class="classstudents" *ngIf="class.students.length == 0">
+          <div class="classindstudent">
+            <div class="linehori"></div>
+            <div class="studentname">No Students</div>
+          </div>
+      </div>
+      <div class="classstudents" *ngIf="class.students.length != 0">
+        <div class="classindstudent" *ngFor="let student of class.students">
+          <div class="linehori"></div>
+          <div class="studentname">{{student}}</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="paginatiocontrols"></div>
+</div>

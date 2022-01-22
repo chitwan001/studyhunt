@@ -1,0 +1,108 @@
+<div class="mainsetting">
+    <h1>Settings</h1>
+    <hr class="line">
+    <div class="settingdivision btn" id="btn" (click)="showmodal('changename')">Change Display Name</div>
+    <div class="settingdivision btn" id="btn" (click)="showmodal('changepp')">Change Profile Pic</div>
+    <div class="settingdivision btn" id="btn" (click)="showmodal('changepwd')">Change password</div>
+    <div class="settingdivision btn" id="btn" (click)="showmodal('helpmodal')">Help</div>
+    <div class="delete btn" id="btn">Delete my account</div>
+
+    <div class="modalform" id="changename">
+    <div class="login-form changename">
+      <div class="cancel_button" (click)="closemodal('changename')">
+      <i class="material-icons">cancel</i>
+      </div>
+      <div class="title">
+            Change Display Name
+        </div>
+        <div class="form">
+            <br>
+            <form>
+              <div class="group">
+                <input type="text" id="newusern" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>New Display Name</label>
+              </div>
+                <div class="group">
+                  <input type="password" id="pass" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Password</label>
+                </div>
+                <input type="submit" (click)="changedispname()" value="submit" class = "button_slide slide_right">
+
+            </form>
+        </div>
+    </div>
+  </div>
+    <div class="modalform"  id="changepwd">
+      <div class="login-form passwd">
+        <div class="cancel_button" (click)="closemodal('changepwd')">
+        <i class="material-icons">cancel</i>
+        </div>
+
+        <div class="title">
+            Change Password
+        </div>
+        <div class="form">
+            <br>
+            <form>
+                <div class="group">
+                  <input type="text" id="email" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>E-mail</label>
+                </div>
+
+                <div class="group">
+                  <input type="password" id="pass" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Password</label>
+                </div>
+                <div class="group">
+                  <input type="password" id="pass" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>New Password</label>
+                </div>
+                <input type="submit" value="submit" class = "button_slide slide_right">
+
+            </form>
+        </div>
+    </div>
+  </div>
+  </div>
+    <div class="modalform"  id="helpmodal">
+    <div class="login-form help">
+        <div class="cancel_button" (click)="closemodal('helpmodal')">
+        <i class="material-icons">cancel</i>
+        </div>
+
+        <div class="title">
+            Help
+        </div>
+        <div class="form">
+            <br>
+            <form>
+                <div class="group">
+                  <input type="text" id="email" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>E-mail</label>
+                </div>
+
+                <div class="group">
+                  <input type="text" id="pass" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Question/Report</label>
+                </div>
+                <input type="submit" value="submit" class = "button_slide slide_right">
+
+            </form>
+        </div>
+    </div>
+  </div>
+

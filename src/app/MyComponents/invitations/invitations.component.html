@@ -1,0 +1,17 @@
+<div class="maininvibody" *ngIf="allinvi.length != 0">
+  <div class="invitatons">
+    <div class="indinvi" *ngFor="let invi of allinvi" id="{{invi._id}}">
+        <div class="studentName">Student's Name : {{invi.stuname}}</div>
+        <div class="BatchName">Batch Requested For : {{invi.batchname}}</div>
+        <div class="batchstudentsleft">Students Left in the Batch : {{invi.stuleft}}</div>
+        <div class="InvitationControls">
+            <div class="accept" (click)="enrollstu([invi.forbatch , invi.bystudent , invi._id])">Enroll</div>
+          <div class="reject" (click)="decline(invi._id)">Decline</div>
+        </div>
+    </div>
+  </div>
+  <div class="paginationcontrols"></div>
+</div>
+<div class="nopendinginvi" *ngIf="allinvi.length == 0">
+  No pending invitations found !
+</div>

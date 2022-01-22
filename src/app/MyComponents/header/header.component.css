@@ -1,0 +1,6 @@
+.mainheaderbody{
+  display: grid;
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  height: 100%;
+}

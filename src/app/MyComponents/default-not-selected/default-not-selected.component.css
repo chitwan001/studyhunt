@@ -1,0 +1,21 @@
+.defaultmessage {
+    /* margin-top: 320px;
+    margin-left: 470px; */
+    display: grid;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    background: url('/assets/Images/wholebg.jpeg');
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+h3{
+    margin-left: 14px;
+    margin-top: 12px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #79018C;
+}
+h1{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #9A0680;
+}

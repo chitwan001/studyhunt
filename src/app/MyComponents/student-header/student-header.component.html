@@ -1,0 +1,38 @@
+<div class="mainstudentheaderbody">
+  <div class="webname">
+    <div class="sitelogo">
+      <div class="sitelogoimg">
+        <a href="/h/t"><img src="/assets/Images/logo.jpeg" alt="" *ngIf="usertype=='Tutor'"></a>
+        <a href="/h/s"><img src="/assets/Images/logo.jpeg" alt="" *ngIf="usertype=='Student'"></a>
+        <!-- <img src="/assets/Images/logo.jpeg" alt="" *ngIf="usertype=='Student'"> -->
+      </div>
+    </div>
+    <a class="namename" *ngIf="usertype=='Tutor'" href="/h/t">
+      StudyHunt
+    </a>
+    <a class="namename" *ngIf="usertype=='Student'" href="/h/s">
+      StudyHunt
+    </a>
+  </div>
+  <div class="headersearch">
+      <div class="search">
+         <input type="text" class="searchTerm" placeholder="What are you looking for?">
+     </div>
+  </div>
+  <div class="notifications">
+    <div class="notiicon" (click)="displaycontent()">
+      <i class="material-icons">notifications</i>
+      <div class="noofnoti">5</div>
+    </div>
+    <div class="noticontent" id="noticontent"></div>
+  </div>
+  <div class="currenttime">
+    {{currenttime}}
+  </div>
+  <div class="myaccount">Welcome {{stuname}}
+    <div class="myaccountmodal">
+      <div class="accmodal" routerLink="/settings">Settings</div>
+      <div class="accmodal" (click)="logout()">Logout</div>
+    </div>
+  </div>
+</div>

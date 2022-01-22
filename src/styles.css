@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  /* background: url('/assets/Images/wholebg.jpeg'); */
+}
+app-aclass{
+  height: 90.3vh;
+  overflow-y: scroll;
+  display: grid;
+}
+app-insights{
+  overflow-y: scroll;
+    height: 92.31vh;
+}

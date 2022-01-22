@@ -1,0 +1,23 @@
+.maintutorbody{
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 0fr 6fr;
+}
+.side-nav{
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  background-color: #eaeaea;
+}
+.sidenavcontent{
+  display: grid;
+}
+.sidenavcont{
+  display: grid;
+  place-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 100;
+}
+.sidenavcont:hover{
+  background-color: rgb(194, 194, 194);
+}

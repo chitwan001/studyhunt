@@ -1,0 +1,46 @@
+.titleofcourses {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.titlebox {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+.coursename{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.titlebox:hover {
+    margin:8px;
+    /* border-style: groove; */
+}
+.sc {
+    background: url("/assets/Images/science.jpeg");
+    background-size: cover;
+}
+.ss {
+    background: url("/assets/Images/social science.jpeg");
+    background-size: cover;
+}
+.ma {
+    background: url("/assets/Images/mathematics.jpeg");
+    background-size: cover;
+}
+.ec {
+    background: url("/assets/Images/economics.jpeg");
+    background-size: cover;
+}
+.co {
+    background: url("/assets/Images/computers.jpeg");
+    background-size: cover;
+}
+.ar {
+    background: url("/assets/Images/arts.jpeg");
+    background-size: cover;
+}

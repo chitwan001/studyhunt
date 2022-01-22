@@ -1,0 +1,120 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<div class="mainsignupbody">
+    <div class="signup-form">
+        <div class="title">
+            Sign-up
+        </div>
+        <div class="form">
+            <br>
+            <form>
+              <div id="group-1">
+                <div class="group">
+                  <input type="text" id="name" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Name</label>
+                </div>
+
+                <div class="group">
+                  <input type="text" id="email" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Email</label>
+                </div>
+
+                <div class="group">
+                  <input type="text" id="number" required>
+                  <div class="highlight"></div>
+                  <span class="bar"></span>
+                  <label>Number</label>
+                </div>
+
+                <div class="group">
+                  <input type="password" id="pass" required>
+                  <div class="highlight"></div>
+                  <span class="bar"></span>
+                  <label>Password</label>
+                </div>
+
+                <div class="group">
+                  <input type="password" id="cfpass" required>
+                  <div class="highlight"></div>
+                  <span class="bar"></span>
+                  <label>Confirm Password</label>
+                </div>
+
+                <div class="person_icon"> <a href="/"> Login
+                  <i class="material-icons">
+                    person_outline
+                    </i>
+                  </a>
+                  </div>
+
+              <button class="group button_slide slide_right" (click)="nextdiv()">Next Page</button>
+
+            </div>
+            <div id="group-2">
+                <div class="group">
+                  <label for="dob" class="label-1">Date</label>
+                  <br>
+                  <br>
+                  <input type="date" id="dob" required>
+                </div>
+
+                <!-- <div class="group">
+                    <input type="text" id="edu" required>
+                    <div class="highlight"></div>
+                    <span class="bar"></span>
+                    <label>Educations</label>
+                </div> -->
+
+                <div class="group">
+                  <label for="edu" class="label-1">Education:</label>
+                  <br>
+                  <br>
+                  <select id="edu" name="edu" (change)="changeedu()">
+                    <option value="sec">Class 9 - 10</option>
+                    <option value="hsec">Class 11 - 12</option>
+                    <option value="ug">Under-Grad.</option>
+                    <option value="pg">Post-Grad.</option>
+                    <option value="phd">PhD.</option>
+                  </select>
+                </div>
+
+                <!-- <div class="group">
+                    <input type="text" id="subj" required>
+                    <div class="highlight"></div>
+                    <span class="bar"></span>
+                    <label>Subjects</label>
+                </div> -->
+
+                <div class="group">
+                  <label for="type" class="label-1">Type of Account:</label>
+                  <br>
+                  <br>
+                  <select id="type" name="type">
+                    <option value="Student">Student</option>
+                    <option value="Tutor" *ngIf="eligiblefortut">Tutor</option>
+                  </select>
+                </div>
+                <input type="submit" value="submit" (click)="signupuser()" class = "button_slide slide_right">
+                <div class="backbtn">
+                  <div class="backarr" (click)="prevdiv()">
+                      <i class="material-icons">
+                          arrow_back
+                      </i>
+                  </div>
+                </div>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
