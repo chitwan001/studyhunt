@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { from } from 'rxjs';
 import { BodyServiceService } from 'src/app/body-service.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class FilterCoursesComponent implements OnInit {
 
   constructor(private activated : ActivatedRoute,private route : Router , private filtercourse : BodyServiceService) { }
   type : any = null;
+  enrolledcourse:any;
   allclasses:any = {
     name : null,
     batchname : null,
@@ -24,7 +26,7 @@ export class FilterCoursesComponent implements OnInit {
       var dataarr = Object.values(data);
       this.type = dataarr[0];
       this.getclasses();
-          });
+    });
   }
   getclasses(){
     this.filtercourse.getClassCourse({course : this.type}).subscribe(data => {
@@ -46,4 +48,15 @@ export class FilterCoursesComponent implements OnInit {
       }
     })
   }
+  findenrolledcourse() {
+    var promise = new Promise((resolve, reject) => {
+      this.filtercourse.getClassesStu().subscribe(endata => {
+        console.log(endata);
+        this.enrolledcourse = endata;
+      })
+      resolve('');
+    });
+    return promise;
+  }
+
 }

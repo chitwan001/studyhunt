@@ -1,4 +1,9 @@
 <div class="mainsetting">
+  <div class="setting_back">
+  <i class="material-icons">
+    arrow_back
+  </i>
+</div>
     <h1>Settings</h1>
     <hr class="line">
     <div class="settingdivision btn" id="btn" (click)="showmodal('changename')">Change Display Name</div>
@@ -6,6 +11,17 @@
     <div class="settingdivision btn" id="btn" (click)="showmodal('changepwd')">Change password</div>
     <div class="settingdivision btn" id="btn" (click)="showmodal('helpmodal')">Help</div>
     <div class="delete btn" id="btn">Delete my account</div>
+    <div class="createclassmodal" id="deletebatchmodal">
+      <div class="dbmodalcontent">
+        <div class="formcontent">
+          You are going to delete your profile. It is not recoverable. Deleting your profile will delete all the profile content. If you know what you are doing is legit, click on Confirm Delete.
+        </div>
+        <div class="formcontrols">
+          <div class="cancel_button" (click)="closedbmodal('deletebatchmodal')">Cancel</div>
+          <div class="delete_button" (click)="deletefinal('deletebatchmodal')">Confirm Delete</div>
+        </div>
+      </div>
+    </div>
 
     <div class="modalform" id="changename">
     <div class="login-form changename">

@@ -24,6 +24,10 @@ export class SettingsComponent implements OnInit {
     var elem = document.getElementById(type) as HTMLElement;
     elem.style.display = "none";
   }
+  closedbmodal(type:any){
+  }
+  deletefinal(type:any){
+  }
   changedispname(){
     var elem = document.getElementById('pass') as HTMLInputElement;
     var elem1 = document.getElementById('newusern') as HTMLInputElement;

@@ -15,16 +15,23 @@
         <div class="uploadnotesheader">
           Upload Notes
         </div>
-        <div class="notesform">
-          <input type="file" name="" multiple id="fileuploaded">
+        <div>
+          <form enctype="multipart/form-data" [formGroup]="submitform" class="notesform" (ngSubmit)="onSubmit()" novalidate >
+            <input formControlName="attachements" (change)="save($event)" type="file" class="fileuploadclass" name="attachements" multiple id="attachements">
+            <input type="submit" class="uploadfilesbtn" value="Upload Selected Files">
+          </form>
         </div>
       </div>
       <div class="mainnotesbody" *ngFor="let indannounce of myannouncements">
         <div class="notesheader">
-          <div class="mainnotessender" >Harsh Sharma</div>
-          <div class="mainnotestime" >17:05</div>
+          <div class="mainnotessender" >{{indannounce.bywhom}}</div>
+          <div class="mainnotestime" >{{(indannounce.createdAt)}}</div>
         </div>
-        <div class="mainnotesmessage" >{{indannounce.content}}</div>
+        <div class="mainnotesmessage" *ngIf="indannounce.attachments == ''">{{indannounce.content}}</div>
+        <div class="mainnotesmessage" *ngIf="indannounce.content == ''">
+          <a href="https://tutormanagementapi.herokuapp.com/{{indannounce.attachements}}">{{(indannounce.attachements)}}</a>
+         <div class="addtofav" id="addtofav{{indannounce._id}}" (click)="addtofavs(indannounce._id)">Add to favourites</div>
+        </div>
     </div>
 
 </div>

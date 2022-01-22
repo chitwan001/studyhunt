@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class BodyServiceService {
 
   constructor(private http: HttpClient) { }
-  _url = "http://localhost:3000/";
+  _url = "https://tutormanagementapi.herokuapp.com/";
   headers = new HttpHeaders().set('Authorization',"Bearer "+this.getToken());
   getToken(){
     let token = sessionStorage.getItem('token');
@@ -81,6 +81,9 @@ export class BodyServiceService {
   getstudentname(data:any){
     return this.http.post((this._url+'classes/getstuname'),data,{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
   }
+  getmixname(data:any){
+    return this.http.post((this._url+'classes/getmixname'),data,{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
+  }
   changeusernamestu(data:any){
     return this.http.post((this._url+'login/changeunamestu'),data,{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
   }
@@ -89,6 +92,17 @@ export class BodyServiceService {
   }
   changepassword(data:any){
     return this.http.post((this._url+'login/changepassword'),data,{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
+  }
+  addtofavs(data:any){
+    return this.http.post((this._url+'favs/add'),data,{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
+
+  }
+  getfavs(){
+    return this.http.get((this._url+'favs/get'),{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
+  }
+  findenrolled(){
+    return this.http.get((this._url+'classes/enrolled'),{'headers' : new HttpHeaders().set('Authorization',"Bearer "+this.getToken())});
+
   }
 }
 

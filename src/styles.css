@@ -13,3 +13,6 @@ app-insights{
   overflow-y: scroll;
     height: 92.31vh;
 }
+.forempty{
+  border: 1px solid red !important;
+}

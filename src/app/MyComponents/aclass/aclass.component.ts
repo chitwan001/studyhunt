@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BodyServiceService } from 'src/app/body-service.service';
-
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { groupBy } from 'rxjs/internal/operators/groupBy';
 @Component({
   selector: 'app-aclass',
   templateUrl: './aclass.component.html',
   styleUrls: ['./aclass.component.css']
 })
 export class AClassComponent implements OnInit {
-
-  constructor(private Activatedroute : ActivatedRoute ,private router : Router, private getClass : BodyServiceService) { }
+  myattach:any;
+  submitform = this.formBuilder.group({
+    attachements : ['']
+  })
+  constructor(private formBuilder: FormBuilder,private Activatedroute : ActivatedRoute ,private router : Router, private getClass : BodyServiceService) { }
 
   classid: any;
   myannouncements : any;
@@ -25,6 +30,20 @@ export class AClassComponent implements OnInit {
   }
   getType(){
     return sessionStorage.getItem('type');
+  }
+  onSubmit(): void {
+    // Process checkout data here
+    // console.log(this.submitform.value);
+    var fd = new FormData();
+    fd.append('file' , this.myattach);
+    fd.append('classid' , this.classid);
+    this.getClass.sendannounce(fd).subscribe(data => {
+      console.log(data);
+    })
+  }
+  save(event:any){
+    var selectfile = event.target.files[0];
+    this.myattach = selectfile;
   }
   getId(){
    this.classid = this.Activatedroute.snapshot.paramMap.get('id');
@@ -50,10 +69,26 @@ export class AClassComponent implements OnInit {
       }
     })
   }
+  addtofavs(iid:any){
+    this.getClass.addtofavs({iid : iid}).subscribe(data => {
+      if(Object.values(data)[0] == 'ok'){
+        var elem = document.getElementById('addtofav'+iid) as HTMLElement;
+        elem.innerHTML = "Added to favourites";
+      }
+    })
+  }
   getannouncements(){
     this.getClass.getannounces({classid : this.classid}).subscribe(data => {
       this.myannouncements = data;
+      this.getstuname(this.myannouncements);
       console.log(this.myannouncements);
     })
+  }
+  getstuname(myannouncements:any){
+    for(let i=0 ; i<myannouncements.length ; i++){
+        this.getClass.getmixname({stuid : myannouncements[i].bywhom}).subscribe(data => {
+          myannouncements[i].bywhom = Object.values(data)[0];
+        })
+    }
   }
 }

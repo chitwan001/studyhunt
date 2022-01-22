@@ -6,7 +6,7 @@
           <div class="invitationcontent">By Tutor : {{invi.teacher}}</div>
           <div class="InvitationControls">
                 <div class="timestampsinvi">
-                  <div class="sentat">{{invi.createdAt}}</div>
+                  <div class="sentat">{{(invi.createdAt)}}</div>
                   <div class="updatedat">{{invi.updatedAt}}</div>
                 </div>
                 <div class="teacher-desired" *ngIf="invi.isaccepted == true">Invitation Accepted</div>

@@ -14,38 +14,38 @@
         </div>
         <div class="form">
             <br>
-            <form>
+            <form #submitform = "ngForm">
               <div id="group-1">
                 <div class="group">
-                  <input type="text" id="name" required>
+                  <input type="text" id="name"  name="name"  ngModel #name="ngModel" [ngClass]="{'forempty':(name.invalid && name.touched)}" required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>Name</label>
                 </div>
 
                 <div class="group">
-                  <input type="text" id="email" required>
+                  <input type="text" id="email" name="email" ngModel #email="ngModel" [ngClass]="{'forempty':(email.invalid && email.touched)}" required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>Email</label>
                 </div>
 
                 <div class="group">
-                  <input type="text" id="number" required>
+                  <input type="text" id="number" name="number" ngModel #number="ngModel" [ngClass]="{'forempty':(number.invalid && number.touched)}" required>
                   <div class="highlight"></div>
                   <span class="bar"></span>
                   <label>Number</label>
                 </div>
 
                 <div class="group">
-                  <input type="password" id="pass" required>
+                  <input type="password" id="pass" name="pass" ngModel #pass="ngModel" [ngClass]="{'forempty':(pass.invalid && pass.touched)}" required>
                   <div class="highlight"></div>
                   <span class="bar"></span>
                   <label>Password</label>
                 </div>
 
                 <div class="group">
-                  <input type="password" id="cfpass" required>
+                  <input type="password" id="cfpass" name="confpass" ngModel #conpass="ngModel" [ngClass]="{'forempty':(conpass.invalid && conpass.touched)}" required>
                   <div class="highlight"></div>
                   <span class="bar"></span>
                   <label>Confirm Password</label>
@@ -66,7 +66,7 @@
                   <label for="dob" class="label-1">Date</label>
                   <br>
                   <br>
-                  <input type="date" id="dob" required>
+                  <input type="date" id="dob" name="date" ngModel #date="ngModel" [ngClass]="{'forempty':(date.invalid && date.touched)}" required>
                 </div>
 
                 <!-- <div class="group">
@@ -80,7 +80,7 @@
                   <label for="edu" class="label-1">Education:</label>
                   <br>
                   <br>
-                  <select id="edu" name="edu" (change)="changeedu()">
+                  <select required id="edu" name="edu" ngModel #edu="ngModel" [ngClass]="{'forempty':(edu.invalid && edu.touched)}" name="edu" (change)="changeedu()">
                     <option value="sec">Class 9 - 10</option>
                     <option value="hsec">Class 11 - 12</option>
                     <option value="ug">Under-Grad.</option>
@@ -100,12 +100,12 @@
                   <label for="type" class="label-1">Type of Account:</label>
                   <br>
                   <br>
-                  <select id="type" name="type">
+                  <select required id="type" name="type" ngModel #type="ngModel" [ngClass]="{'forempty':(type.invalid && type.touched)}" name="type">
                     <option value="Student">Student</option>
                     <option value="Tutor" *ngIf="eligiblefortut">Tutor</option>
                   </select>
                 </div>
-                <input type="submit" value="submit" (click)="signupuser()" class = "button_slide slide_right">
+                <input type="submit" [disabled]="!submitform.valid" value="submit" (click)="signupuser()" class = "button_slide slide_right">
                 <div class="backbtn">
                   <div class="backarr" (click)="prevdiv()">
                       <i class="material-icons">

@@ -15,8 +15,17 @@
     grid-template-rows: 1fr 1fr 1fr 2fr ;
   }
   .InvitationControls{
-    width: 20%;
-    justify-self: right;
+    width: 100%;
+    /* justify-self: right; */
+    grid-template-columns: 5fr 1fr;
+    display: grid;
+  }
+  .timestampsinvi{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+    place-content: center;
+    text-align: center;
   }
   .teacher-desired{
     width: fit-content;

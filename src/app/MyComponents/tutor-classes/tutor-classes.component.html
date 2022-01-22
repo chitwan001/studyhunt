@@ -41,20 +41,20 @@
 </div>
 
 <div class="createclassmodal" id="createclassmodal">
-  <div class="modalcontent">
+  <form #cclassform='ngForm'class="modalcontent">
     <div class="formcontent">
       <div class="forminput">
-      <div class="formlabel"> Batch/Class Name: </div> <input type="text" name="" id="classnameinput">
+      <div class="formlabel"> Batch/Class Name: </div> <input required type="text" name="bname" ngModel  #bname="ngModel" [ngClass]="{'forempty' : (bname.invalid && bname.touched)}" id="classnameinput">
       </div>
       <div class="forminput">
-        <div class="formlabel">Batch/Class : </div><input type="text" name="" id="batchinput">
+        <div class="formlabel">Batch/Class : </div><input required type="text" name="batch"ngModel  #batch="ngModel" [ngClass]="{'forempty' : (batch.invalid && batch.touched)}" id="batchinput">
       </div>
       <div class="forminput">
-       <div class="formlabel"> Subject : </div><input type="text" name="" id="subjectinput">
+       <div class="formlabel"> Subject : </div><input required type="text" name="sub" ngModel #sub="ngModel" [ngClass]="{'forempty' : (sub.invalid && sub.touched)}" id="subjectinput">
       </div>
       <div class="forminput">
        <div class="formlabel"> Courses : </div>
-       <select name="" class="classes1" id="courses">
+       <select name="" required class="classes1" id="courses">
          <option value="science">Science</option>
          <option value="social science">Social Science</option>
          <option value="arts">Arts</option>
@@ -64,14 +64,14 @@
        </select>
       </div>
       <div class="forminput">
-       <div class="formlabel"> Maximum Students : </div><input type="number" name="" id="maxstudents">
+       <div class="formlabel"> Maximum Students : </div><input required type="number" name="" id="maxstudents">
       </div>
     </div>
     <div class="formcontrols">
       <div class="cancel" (click)="closemodal()">Cancel</div>
-      <div class="createclass" (click)="startaclass()">Start a class</div>
+      <button class="createclass" [disabled]="!cclassform.valid" (click)="startaclass()">Start a class</button>
     </div>
-  </div>
+  </form>
 </div>
 <div class="createclassmodal" id="deletebatchmodal">
   <div class="dbmodalcontent">

@@ -125,12 +125,28 @@
     width: 53vw;
     padding-left: 15vh;
     height: 4vh;
+    grid-template-columns: 1fr 1fr;
 }
 
 input {
-  text-align: center;
+  text-align: left;
+  padding-left: 2vh;
+  height: 2.7vh;
+  width: 50vw;
 }
 
 ::-webkit-input-placeholder {
   text-align: center;
+}
+
+.searchButton {
+  width: 2vw;
+  height: 3.3vh;
+  border: 1px solid #5d312e;
+    background: #f9b24a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }

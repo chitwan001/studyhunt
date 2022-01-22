@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './MyComponents/header/header.component';
 import { LoginComponentComponent } from './MyComponents/login-component/login-component.component';
 import { SignupComponentComponent } from './MyComponents/signup-component/signup-component.component';
@@ -58,7 +58,8 @@ import { WeatherapiComponent } from './MyComponents/weatherapi/weatherapi.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

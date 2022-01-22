@@ -13,23 +13,23 @@
         </div>
         <div class="form">
             <br>
-            <form>
+            <form #loginForm = "ngForm">
                 <div class="group">
-                  <input type="text" id="email" required>
+                  <input type="text" #email="ngModel" [ngClass]="{'forempty' : (email.invalid && email.touched)}" name="email" id="email" required ngModel>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>E-mail</label>
                 </div>
 
                 <div class="group">
-                  <input type="password" id="pass" required>
+                  <input type="password" #pass="ngModel" [ngClass]="{'forempty' : (pass.invalid && pass.touched)}" name="pass" id="pass" required ngModel>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>Password</label>
                 </div>
 
 
-                <input type="submit" value="submit" (click)="loginreq()" class = "button_slide slide_right">
+                <input type="submit" [disabled]="!loginForm.valid" value="submit" (click)="loginreq()" class = "button_slide slide_right">
                 <br>
                 <br>
                 <button class = "button_slide slide_right"> <a href="/signup">Sign-Up</a></button>

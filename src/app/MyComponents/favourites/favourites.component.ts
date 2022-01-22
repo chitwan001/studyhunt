@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BodyServiceService } from 'src/app/body-service.service';
 
 @Component({
   selector: 'app-favourites',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouritesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private getFavs : BodyServiceService) { }
+  myfavs : any;
   ngOnInit(): void {
+    this.getfavs();
   }
-
+  getfavs(){
+    this.getFavs.getfavs().subscribe(data => {
+      this.myfavs = data;
+      console.log(data);
+    })
+  }
 }
