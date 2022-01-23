@@ -13,6 +13,17 @@ app-insights{
   overflow-y: scroll;
     height: 92.31vh;
 }
+app-invi-student{
+  overflow-y: scroll;
+    height: 92.3vh;
+}
+app-settings{
+  background: url('/assets/Images/bgunderdev.jpg') repeat;
+    background-size: cover;
+}
 .forempty{
   border: 1px solid red !important;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -3,5 +3,5 @@
   height: 100vh;
   display: grid;
   position: relative;
-  grid-template-rows: 0fr 1fr;
+  grid-template-rows: 0fr 0fr 1fr;
 }

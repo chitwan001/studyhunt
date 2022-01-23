@@ -27,9 +27,9 @@
           <div class="mainnotessender" >{{indannounce.bywhom}}</div>
           <div class="mainnotestime" >{{(indannounce.createdAt)}}</div>
         </div>
-        <div class="mainnotesmessage" *ngIf="indannounce.attachments == ''">{{indannounce.content}}</div>
+        <div class="mainnotesmessage" *ngIf="indannounce.attachments == null">{{indannounce.content}}</div>
         <div class="mainnotesmessage" *ngIf="indannounce.content == ''">
-          <a href="https://tutormanagementapi.herokuapp.com/{{indannounce.attachements}}">{{(indannounce.attachements)}}</a>
+          <a target="_blank" href="https://tutormanagementapi.herokuapp.com/{{indannounce.attachements}}">{{(indannounce.attachements)}}</a>
          <div class="addtofav" id="addtofav{{indannounce._id}}" (click)="addtofavs(indannounce._id)">Add to favourites</div>
         </div>
     </div>

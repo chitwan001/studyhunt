@@ -38,7 +38,19 @@ export class AClassComponent implements OnInit {
     fd.append('file' , this.myattach);
     fd.append('classid' , this.classid);
     this.getClass.sendannounce(fd).subscribe(data => {
+
       console.log(data);
+      var dataarr = Object.values(data);
+      if(dataarr[0] == 'ok'){
+        let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([currentUrl]);
+      }
+
+
+
+
     })
   }
   save(event:any){

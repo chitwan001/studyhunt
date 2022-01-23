@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './MyComponents/header/header.component';
 import { LoginComponentComponent } from './MyComponents/login-component/login-component.component';
@@ -27,6 +27,10 @@ import { InviStudentComponent } from './MyComponents/invi-student/invi-student.c
 import { FilterCoursesComponent } from './MyComponents/filter-courses/filter-courses.component';
 import { InsightsComponent } from './MyComponents/insights/insights.component';
 import { WeatherapiComponent } from './MyComponents/weatherapi/weatherapi.component';
+import { SpinnerComponent } from './MyComponents/spinner/spinner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressBarModule} from '@angular/material/progress-bar'
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -52,16 +56,21 @@ import { WeatherapiComponent } from './MyComponents/weatherapi/weatherapi.compon
     InviStudentComponent,
     FilterCoursesComponent,
     InsightsComponent,
-    WeatherapiComponent
+    WeatherapiComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS , useClass : InterceptorService , multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

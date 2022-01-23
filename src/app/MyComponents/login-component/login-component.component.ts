@@ -16,6 +16,9 @@ export class LoginComponentComponent implements OnInit {
     this.resultloggedin();
   }
   loginuser:any;
+  error:any = {
+    messge : ''
+  };
   resultloggedin(){
     if((this.checkloggedin())){
       // console.log('here');
@@ -42,8 +45,11 @@ export class LoginComponentComponent implements OnInit {
     // console.log(email,pass);
     this.login.logireq({email : email.value , pass : pass.value}).subscribe(data => {
       console.log(data);
-      this.loginuser = data;
-      sessionStorage.setItem('token',this.loginuser.token)
+      this.error = data;
+      if(!(this.error.messge)){
+        this.loginuser = data;
+        this.error= null;
+        sessionStorage.setItem('token',this.loginuser.token)
       sessionStorage.setItem('userId',this.loginuser.userId)
       sessionStorage.setItem('type',this.loginuser.type)
       if(this.loginuser.type == "Tutor"){
@@ -51,6 +57,10 @@ export class LoginComponentComponent implements OnInit {
       }
       else{
         this.router.navigate([`/h/s`]);
+      }
+      }
+      else{
+        this.loginuser = null;
       }
     })
   }
